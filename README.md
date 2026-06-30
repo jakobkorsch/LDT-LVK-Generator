@@ -1,44 +1,94 @@
-# LVK Generator aus LDT-Dateien
+# LDT LVK Generator
 
-Dieses Mini-Projekt liest eine `.ldt`/EULUMDAT-Datei und erzeugt daraus automatisch:
+Generate LVK (Light Distribution Curve) diagrams from **EULUMDAT (.ldt)** files using Python.
 
-- eine LVK-Grafik als PNG
-- eine LVK-Grafik als PDF
-- eine CSV-Tabelle mit den cd/klm-Werten
+The application automatically reads photometric data from an LDT file and generates:
 
-## Installation auf Windows
+- PNG light distribution diagram
+- PDF light distribution diagram
+- Interactive Streamlit interface
 
-1. Python installieren: https://www.python.org/downloads/  
-   Wichtig: Beim Installer **Add Python to PATH** aktivieren.
+---
 
-2. Ordner öffnen, in dem diese Dateien liegen.
+## Features
 
-3. Terminal/CMD öffnen und ausführen:
+- Read EULUMDAT (.ldt) files
+- Automatic detection of C-planes and Gamma angles
+- Automatic extraction of photometric values (cd/klm)
+- Generate LVK diagrams
+- Export as PNG
+- Export as PDF
+- Streamlit web interface
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/jakobkorsch/LDT-LVK-Generator.git
+cd LDT-LVK-Generator
+```
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Nutzung
+---
+
+## Run the application
 
 ```bash
-python lvk_generator.py example_spotlight.ldt --out ausgabe
+streamlit run app.py
 ```
 
-Danach liegen die Ergebnisse im Ordner `ausgabe`.
+Then open:
 
-## Bestimmte C-Ebene ausgeben
-
-```bash
-python lvk_generator.py example_spotlight.ldt --out ausgabe --c-plane 0
+```
+http://localhost:8501
 ```
 
-Oder z. B.:
+---
 
-```bash
-python lvk_generator.py example_spotlight.ldt --out ausgabe --c-plane 90
+## Usage
+
+1. Upload an **LDT (EULUMDAT)** file.
+2. Click **Generate LVK**.
+3. Preview the generated light distribution diagram.
+4. Download the result as PNG or PDF.
+
+---
+
+## Technologies
+
+- Python
+- Streamlit
+- NumPy
+- Matplotlib
+
+---
+
+## Project Structure
+
+```
+app.py
+lvk_generator.py
+requirements.txt
+example_spotlight.ldt
+README.md
 ```
 
-## Für die Präsentation beim Chef
+---
 
-Wichtig sagen: Das ist keine KI, die eine LVK schätzt. Die echten photometrischen Daten stehen in der LDT-Datei. Das Script liest diese Daten aus und erstellt automatisch die LVK-Darstellung.
+## Example
+
+The repository contains a sample LDT file for testing.
+
+---
+
+## License
+
+MIT License
